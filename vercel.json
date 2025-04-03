@@ -6,16 +6,15 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/api/translate",
-      "methods": ["POST"],
-      "dest": "index.js"
-    },
-    {
-      "src": "/",
-      "methods": ["GET"],
-      "dest": "index.js"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }
