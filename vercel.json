@@ -10,12 +10,12 @@
     {
       "src": "/api/translate",
       "methods": ["POST"],
-      "dest": "server.js"
+      "dest": "index.js"
     },
     {
       "src": "/",
       "methods": ["GET"],
-      "dest": "server.js"
+      "dest": "index.js"
     }
   ]
 }
