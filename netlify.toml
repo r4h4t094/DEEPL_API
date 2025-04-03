@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/"
+  to = "/api/index.js"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
