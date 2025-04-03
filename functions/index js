@@ -1,6 +1,7 @@
 const express = require("express");
 const serverless = require("serverless-http");
 const app = express();
+const router = express.Router();
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -10,7 +11,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
+// Define Routes
+router.get("/", (req, res) => {
   res.json({
     code: 200,
     message: "Welcome to DeepL Free API. POST to /api/translate."
@@ -18,6 +20,9 @@ app.get("/", (req, res) => {
 });
 
 const translateHandler = require("../api/translate");
-app.post("/api/translate", translateHandler);
+router.post("/api/translate", translateHandler);
+
+// Use the router
+app.use("/", router);
 
 module.exports.handler = serverless(app);
