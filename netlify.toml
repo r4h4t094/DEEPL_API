@@ -1,9 +1,9 @@
-[[redirects]]
-  from = "/"
-  to = "/api/index.js"
-  status = 200
+[build]
+  functions = "functions"
+  command = "npm install"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  
